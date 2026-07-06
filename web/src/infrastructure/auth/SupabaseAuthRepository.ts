@@ -1,0 +1,21 @@
+import { IAuthRepository } from '@/domain/repositories/IAuthRepository';
+import { SignInCredentials } from '@/domain/repositories/IAuthRepository';
+import { User } from '@/domain/entities/User';
+
+/**
+ * Implementação futura para Supabase Auth.
+ * Substituir no container quando AUTH_PROVIDER=supabase.
+ */
+export class SupabaseAuthRepository implements IAuthRepository {
+  async signIn(_credentials: SignInCredentials): Promise<User> {
+    throw new Error('Supabase Auth ainda não configurado.');
+  }
+
+  async signOut(): Promise<void> {
+    throw new Error('Supabase Auth ainda não configurado.');
+  }
+
+  async getCurrentUser(): Promise<User | null> {
+    return null;
+  }
+}
