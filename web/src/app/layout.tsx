@@ -13,9 +13,15 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: 'Cordas Industriais — Portal B2B',
+  title: {
+    default: 'Trançatto — Cordas e tricôs náuticos',
+    template: '%s · Trançatto',
+  },
   description:
-    'Fábrica de cordas industriais com rastreabilidade total, prazos confiáveis e portal B2B para parceiros.',
+    'Cordas e tricôs náuticos com fabricação própria para móveis e decoração.',
+  icons: {
+    icon: '/images/trancatto/asset-12.png',
+  },
 };
 
 export default function RootLayout({
@@ -28,7 +34,7 @@ export default function RootLayout({
       lang="pt-BR"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col bg-neutral-50 text-neutral-900">
+      <body className="min-h-full">
         {children}
       </body>
     </html>

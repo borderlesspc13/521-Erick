@@ -88,9 +88,9 @@ export function LoginForm() {
 
       <Button
         type="submit"
-        variant="secondary"
+        variant="primary"
         size="lg"
-        className="w-full"
+        className="w-full !rounded-none !bg-[#1b3d2f] hover:!bg-[#0f2b23] focus-visible:!ring-[#1b3d2f]/30"
         isLoading={isLoading}
         disabled={isLoading}
       >
@@ -99,7 +99,7 @@ export function LoginForm() {
 
       <p className="text-center text-sm text-neutral-500">
         Ainda não tem conta?{' '}
-        <Link href="/register" className="font-medium text-primary-800 hover:underline">
+        <Link href="/register" className="font-medium hover:underline">
           Criar conta
         </Link>
       </p>

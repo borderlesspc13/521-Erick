@@ -24,7 +24,11 @@ export function useLogin(): UseLoginReturn {
       const { container } = await import('@/infrastructure/di/container');
       const { AuthError } = await import('@/infrastructure/auth/auth.utils');
       await container.getAuthService().login(input);
-      router.push('/dashboard');
+      const { resolvePostAuthRedirect } = await import(
+        '@/infrastructure/firebase/FirebaseUserProfileRepository'
+      );
+      const redirectPath = await resolvePostAuthRedirect();
+      router.push(redirectPath);
     } catch (err) {
       const { AuthError } = await import('@/infrastructure/auth/auth.utils');
       if (err instanceof AuthError) {

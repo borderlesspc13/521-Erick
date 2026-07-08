@@ -63,6 +63,7 @@ export class FirebaseAuthRepository implements IAuthRepository {
         companyName: credentials.companyName,
         clientCnpj: credentials.cnpj,
         createdAt: new Date().toISOString(),
+        role: 'client',
       });
 
       return mapFirebaseUser({
