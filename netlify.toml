@@ -1,3 +1,13 @@
+# Monorepo: só o Next.js em web/ vai ao Netlify (mobile/ fica de fora).
+# NÃO remova publish nem o plugin — sem isso o deploy sobe vazio e a home vira 404.
 [build]
   base = "web"
   command = "npm run build"
+  publish = ".next"
+
+[build.environment]
+  NODE_VERSION = "20"
+  NEXT_TELEMETRY_DISABLED = "1"
+
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
